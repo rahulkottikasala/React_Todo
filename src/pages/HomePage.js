@@ -4,10 +4,8 @@ import TodoList from "../list/TodoList";
 import "./HomePage.css";
 
 const HomePage = () => {
-
   const [todos, setTodos] = useState([]);
   const [inputVal, setInputVal] = useState("");
-  
 
   /* Callback function */
 

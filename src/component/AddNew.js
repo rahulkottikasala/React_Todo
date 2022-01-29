@@ -22,7 +22,7 @@ const AddNew = (props) => {
       </div>
 
       <button
-        onClick={() => handleTodoValue(inputVal)}
+        onClick={() => handleTodoValue()}
         className="add-button"
         style={{ width: "70px" }}
       >
