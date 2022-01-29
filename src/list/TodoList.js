@@ -3,8 +3,7 @@ import "./TodoList.css";
 import DeleteBtn from "../assets/Delete.svg";
 
 const TodoList = (props) => {
-  const { todos, setTodos} = props;
-
+  const { todos, handleTodoDelete, handleTodoStatus } = props;
 
   return (
     <div className="todo-list">
@@ -16,7 +15,6 @@ const TodoList = (props) => {
                 className={
                   todo.status === false ? "active-todo" : "inactive-todo"
                 }
-                // style={{textDecorationLine: 'line-through', textDecorationStyle: 'solid'}}
               >
                 {todo.value}
               </div>
@@ -24,18 +22,26 @@ const TodoList = (props) => {
                 <input
                   type="checkbox"
                   defaultChecked={todos.status}
-                  onChange={ (e) =>{
-                    setTodos(todos.filter((obj) => {
-                      if(obj.id === todo.id){
-                        obj.status = e.target.checked
-                      }
-                      return obj;
-                    })
-                    )
+                  onChange={(e) => {
+                    // setTodos(todos.filter((obj) => {
+                    //   if(obj.id === todo.id){
+                    //     obj.status = e.target.checked
+                    //   }
+                    //   return obj;
+                    // })
+                    // )
+                    const status = e.target.checked;
+                    handleTodoStatus(status, todo.id);
                   }}
-                  
                 />
-                <img className="remove-todo" src={DeleteBtn} alt="" />
+                <img
+                  className="remove-todo"
+                  onClick={() => {
+                    handleTodoDelete(todo.id);
+                  }}
+                  src={DeleteBtn}
+                  alt=""
+                />
               </div>
             </div>
           );

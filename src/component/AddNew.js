@@ -1,25 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./AddNew.css";
 import ClearBtn from "../assets/Clear.svg";
 
 const AddNew = (props) => {
-  const [inputVal, setInputVal] = useState("");
-  const { setTodos, todos } = props;
-
-  const handleOnChangeValue = (event) => {
-    setInputVal(event.target.value);
-  };
-  const handleTodoValue = () => {
-    setTodos([
-      ...todos,
-      {
-        id: Math.floor(Math.random() * 100),
-        value: inputVal,
-        status: false,
-      },
-    ]);
-    setInputVal("");
-  };
+  const { inputVal, handleTodoValue, handleOnChangeValue } = props;
+  
 
   return (
     <div className="container">
@@ -29,14 +14,15 @@ const AddNew = (props) => {
           style={{ width: "100%" }}
           type="text"
           value={inputVal}
-          onChange={handleOnChangeValue}
+          onChange={(event) => handleOnChangeValue(event)}
           placeholder="Typing..."
+          onKeyPress={(e) => (e.key === 'Enter' ? handleTodoValue(inputVal) : null ) }
         />
         <img className="clear-todo" src={ClearBtn} alt="clear" />
       </div>
 
       <button
-        onClick={handleTodoValue}
+        onClick={() => handleTodoValue(inputVal)}
         className="add-button"
         style={{ width: "70px" }}
       >
