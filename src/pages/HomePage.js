@@ -8,7 +8,9 @@ const HomePage = () => {
   const [inputVal, setInputVal] = useState("");
 
   /* Callback function */
-
+  const handleClearValue = () => {
+    setInputVal("");
+  };
   const handleTodoValue = () => {
     if (inputVal === "") {
       return null;
@@ -50,6 +52,7 @@ const HomePage = () => {
       <AddNew
         handleTodoValue={handleTodoValue}
         handleOnChangeValue={handleOnChangeValue}
+        handleClearValue={handleClearValue}
         todos={todos}
         inputVal={inputVal}
       />

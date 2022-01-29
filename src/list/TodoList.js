@@ -23,13 +23,6 @@ const TodoList = (props) => {
                   type="checkbox"
                   defaultChecked={todos.status}
                   onChange={(e) => {
-                    // setTodos(todos.filter((obj) => {
-                    //   if(obj.id === todo.id){
-                    //     obj.status = e.target.checked
-                    //   }
-                    //   return obj;
-                    // })
-                    // )
                     const status = e.target.checked;
                     handleTodoStatus(status, todo.id);
                   }}

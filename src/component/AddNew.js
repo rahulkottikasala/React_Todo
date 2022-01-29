@@ -3,12 +3,12 @@ import "./AddNew.css";
 import ClearBtn from "../assets/Clear.svg";
 
 const AddNew = (props) => {
-  const { inputVal, handleTodoValue, handleOnChangeValue } = props;
+  const { inputVal, handleTodoValue, handleOnChangeValue, handleClearValue } = props;
   
 
   return (
     <div className="container">
-      <div className="inputWithButton" style={{ width: "50%" }}>
+      <div className="inputWithButton">
         <input
           className="add-new"
           style={{ width: "100%" }}
@@ -18,16 +18,20 @@ const AddNew = (props) => {
           placeholder="Typing..."
           onKeyPress={(e) => (e.key === 'Enter' ? handleTodoValue(inputVal) : null ) }
         />
-        <img className="clear-todo" src={ClearBtn} alt="clear" />
+        <img
+        onClick={() => handleClearValue()}
+        className="clear-todo"
+         src={ClearBtn}
+          alt="clear" />
       </div>
 
-      <button
+      {/* <button
         onClick={() => handleTodoValue()}
         className="add-button"
         style={{ width: "70px" }}
       >
         Enter
-      </button>
+      </button> */}
     </div>
   );
 };

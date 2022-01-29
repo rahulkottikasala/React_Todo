@@ -1,41 +1,59 @@
-.list-group{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 50vh;
-    width: 100%;
-    padding: 10px;
-}
-.list-item{
-    width: 40%;
+@media screen and (max-width: 600px) {
+  .list-item {
+    width: 80%;
     height: auto;
-    background-color:beige;
+    background-color: beige;
     margin: 5px 0;
     padding: 10px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-radius: 5px;
-
+  }
 }
-.list-btn{
+@media screen and (min-width: 600px) {
+  .list-item {
+    width: 55%;
+    height: auto;
+    background-color: beige;
+    margin: 5px 0;
+    padding: 10px 10px;
     display: flex;
-    width:60px;
-    height: 30px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    border-radius: 5px;
+  }
 }
-.remove-todo{
-    padding-left: 15px;
-    width:18px;
-    height:18px;
-    display: flex;
+.list-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50vh;
+  padding: 10px;
+  overflow: scroll;
 }
-.active-todo{
-    overflow: hidden; 
+.list-group::-webkit-scrollbar {
+    display: none;
+  }
+
+.list-btn {
+  display: flex;
+  width: 60px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
 }
-.inactive-todo{
-    overflow: hidden;
-    text-decoration: line-through;
-    text-decoration-style: solid;
+.remove-todo {
+  padding-left: 15px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+}
+.active-todo {
+  overflow: hidden;
+}
+.inactive-todo {
+  overflow: hidden;
+  text-decoration: line-through;
+  text-decoration-style: solid;
 }
