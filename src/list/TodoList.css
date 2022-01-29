@@ -13,6 +13,7 @@
     margin: 5px 0;
     padding: 10px 10px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     border-radius: 5px;
 
@@ -29,4 +30,12 @@
     width:18px;
     height:18px;
     display: flex;
+}
+.active-todo{
+    overflow: hidden; 
+}
+.inactive-todo{
+    overflow: hidden;
+    text-decoration: line-through;
+    text-decoration-style: solid;
 }
