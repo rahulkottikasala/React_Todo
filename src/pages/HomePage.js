@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import AddNew from "../component/AddNew";
 import TodoList from "../list/TodoList";
 import "./HomePage.css";
+import TrashPage from "./TrashPage";
 
 const HomePage = () => {
   const [todos, setTodos] = useState([]);
+  const [trash, setTrash] = useState(false);
+  const [trashObj, setTrashObj] = useState([]);
   const [inputVal, setInputVal] = useState("");
 
   /* Callback function */
@@ -18,7 +21,8 @@ const HomePage = () => {
       setTodos([
         ...todos,
         {
-          id: Math.floor(Math.random() * 100),
+          // id: Math.floor(Math.random() * 100),
+          id:Date.now(),
           value: inputVal,
           status: false,
         },
@@ -31,6 +35,9 @@ const HomePage = () => {
   };
   const handleTodoDelete = (id) => {
     const newArray = todos.filter((element) => element.id !== id);
+    const trashArray = todos.filter((element) => element.id === id);
+    setTrashObj([...trashObj, trashArray]);
+
     setTodos(newArray);
   };
 
@@ -44,6 +51,27 @@ const HomePage = () => {
       })
     );
   };
+
+  const handleTrashStatus = () => {
+    setTrash(!trash);
+  };
+  const handleUndoDelete = (obj) => {
+    const newArray = {
+      id: obj.id,
+      value: obj.value,
+      status: false,
+
+    }
+    const newTrashArray = trashObj.filter((element) => element[0].id !== obj.id);
+    console.log(newTrashArray,obj);
+setTodos([
+  ...todos,newArray
+])
+  setTrashObj(newTrashArray);
+
+
+
+  }
   /* ---------------------------------------------------------------- */
   // console.log(todos);
 
@@ -55,12 +83,19 @@ const HomePage = () => {
         handleClearValue={handleClearValue}
         todos={todos}
         inputVal={inputVal}
+        trashObj={trashObj}
+        handleTrashStatus={handleTrashStatus}
+        message={trash}
       />
-      <TodoList
-        todos={todos}
-        handleTodoDelete={handleTodoDelete}
-        handleTodoStatus={handleTodoStatus}
-      />
+      {!trash ? (
+        <TodoList
+          todos={todos}
+          handleTodoDelete={handleTodoDelete}
+          handleTodoStatus={handleTodoStatus}
+        />
+      ) : (
+        <TrashPage trashObj={trashObj} handleUndoDelete={handleUndoDelete}  message={trash} />
+      )}
     </div>
   );
 };

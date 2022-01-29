@@ -32,6 +32,7 @@
     width : 200px;
     display: flex;
     width: 80%;
+  
   }
   .add-new{
     background-color:beige;;
@@ -63,8 +64,9 @@
     height: 7rem;
 }
 
-/* .add-button{
+.add-button{
     background-color:rgb(192, 192, 143);
     border: none ;
-    height: 2.8rem
-} */
+    height: 2.2rem;
+    margin-top:10px
+}
