@@ -1,0 +1,11 @@
+.trash-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column ;
+    justify-content: flex-start;
+    height: 50vh;
+}
+.empty-trash {
+    color: aliceblue; 
+    background:none
+}

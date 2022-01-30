@@ -94,7 +94,7 @@ setTodos([
           handleTodoStatus={handleTodoStatus}
         />
       ) : (
-        <TrashPage trashObj={trashObj} handleUndoDelete={handleUndoDelete}  message={trash} />
+        <TrashPage trashObj={trashObj} handleUndoDelete={handleUndoDelete} />
       )}
     </div>
   );
