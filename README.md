@@ -1,8 +1,6 @@
 ## Simple ToDo Application
-
-<img src="https://user-images.githubusercontent.com/81835507/151646105-988951a7-7ce4-4fb3-8abe-fd5edf01946e.png" width=50% height=50%>
-
-
+ 
+<img src="https://user-images.githubusercontent.com/81835507/151683060-25d8233a-2355-48a1-a65d-feedf8b9f516.png" width=25% height=25%>    <img src="https://user-images.githubusercontent.com/81835507/151683062-bc2df1cb-c64c-44e2-8221-8abc00a8e4fb.png" width=25% height=25%>
 
 ## Demo
 To view a demo go here:https://todo-23526.firebaseapp.com/
