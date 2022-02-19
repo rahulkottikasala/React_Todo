@@ -1,10 +1,11 @@
 import React,{useState, useEffect} from 'react';
 import './TrashPage.css'
 import UndoBtn from "../assets/undo.svg";
+import DeleteBtn from "../assets/Delete.svg";
 import EmptyTrash from '../list/EmptyTrash';
         
 const TrashPage = (props) => {
-    const {trashObj, handleUndoDelete} = props;
+    const {trashObj, handleUndoDelete, handleDelete} = props;
     const [trashStatus, setTrashStatus] = useState(false);
 
     useEffect(() => {
@@ -39,6 +40,15 @@ const TrashPage = (props) => {
                    src={UndoBtn}
                    onClick={() => {
                     handleUndoDelete(todo[0])
+                   }}
+                   
+                   alt=""
+                 />
+                 <img
+                   className="remove-todo"
+                   src={DeleteBtn}
+                   onClick={() => {
+                    handleDelete(todo[0])
                    }}
                    
                    alt=""

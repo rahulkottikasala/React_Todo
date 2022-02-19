@@ -25,7 +25,16 @@ const AddNew = (props) => {
          src={ClearBtn}
           alt="clear" />
       </div>
-
+<div className="btn-grp">
+      <button
+        className="add-button"
+        style={{ width: "70px" }}
+        onClick={() => {
+          handleTodoValue(inputVal)
+        }}
+      >
+       Add
+      </button>
       <button
         onClick={() => handleTrashStatus()}
         className="add-button"
@@ -33,6 +42,7 @@ const AddNew = (props) => {
       >
         {message ? "Back" : "Trash"}
       </button>
+      </div>
     </div>
   );
 };

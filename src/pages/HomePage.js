@@ -72,6 +72,14 @@ setTodos([
 
 
   }
+  const handleDelete = (obj) => {
+    const newTrashArray = trashObj.filter((element) => element[0].id !== obj.id);
+    console.log(newTrashArray,obj);
+  setTrashObj(newTrashArray);
+
+
+
+  }
   /* ---------------------------------------------------------------- */
   // console.log(todos);
 
@@ -94,7 +102,7 @@ setTodos([
           handleTodoStatus={handleTodoStatus}
         />
       ) : (
-        <TrashPage trashObj={trashObj} handleUndoDelete={handleUndoDelete} />
+        <TrashPage trashObj={trashObj} handleUndoDelete={handleUndoDelete} handleDelete={handleDelete} />
       )}
     </div>
   );

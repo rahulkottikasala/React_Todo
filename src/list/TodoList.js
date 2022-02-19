@@ -10,7 +10,7 @@ const TodoList = (props) => {
       <div className="list-group">
         {todos.map((todo) => {
           return (
-            <div key={todo.id} className="list-item">
+            <div key={todo.id} className="list-item" >
               <div
                 className={
                   todo.status === false ? "active-todo" : "inactive-todo"
@@ -18,9 +18,11 @@ const TodoList = (props) => {
               >
                 {todo.value}
               </div>
-              <div className="list-btn">
+              
+              <div  className="list-btn">
                 <input
                   type="checkbox"
+                  id="checked"
                   defaultChecked={todos.status}
                   onChange={(e) => {
                     const status = e.target.checked;
