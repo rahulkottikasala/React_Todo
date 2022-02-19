@@ -26,7 +26,7 @@ const AddNew = (props) => {
           alt="clear" />
       </div>
 <div className="btn-grp">
-      <button
+       { !message ? (<button
         className="add-button"
         style={{ width: "70px" }}
         onClick={() => {
@@ -34,7 +34,7 @@ const AddNew = (props) => {
         }}
       >
        Add
-      </button>
+      </button>) : null}
       <button
         onClick={() => handleTrashStatus()}
         className="add-button"
